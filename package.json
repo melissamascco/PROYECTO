@@ -1,0 +1,12 @@
+{
+  "name": "primer-repositorio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss/style.scss css/style.css"
+  },
+  "author": "melissa",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
