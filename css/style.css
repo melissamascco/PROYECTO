@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.centrado {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.centrado__titulo {
+  color: brown;
+}
+
+.fondo {
+  background-image: url("../carpeta imag/FONDO33.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.TP {
+  font-family: "Arial Black";
+}
+
+.IP {
+  font-family: "Big Caslon";
+}
+
+.TS {
+  font-family: "Verdana";
+}
+
+.padre {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.contenedor {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: 20px;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.box1 {
+  width: 230px;
+  height: 330px;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #3f7414;
+  margin: 0.8rem;
+  padding: 0.8rem;
+  background-color: white;
+}
+
+.box1:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.box3 {
+  width: 120px;
+  height: 150px;
+  background-color: rgba(247, 240, 240, 0);
+  margin: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #3f7414;
+}
+
+.box3:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.box5 {
+  width: 500px;
+  height: 700px;
+  background-color: rgba(247, 240, 240, 0);
+  margin: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #3f7414;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+
+.FONDO2 {
+  background: rgba(94, 226, 42, 0.1);
+}
+
+.card1 {
+  margin: 1rem;
+  max-width: 280px;
+  padding: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+.card1_text {
+  font-style: italic;
+  text-align: center;
+}
+.card1_title {
+  font-style: italic;
+  text-align: center;
+  color: black;
+  color: black;
+  font-weight: bold;
+}
+.card1_1 {
+  background: white;
+}
+
+.card1:hover {
+  transform: scale(1.1, 1.1);
+}
+
+textarea {
+  width: 70%;
+  min-height: 60px;
+  max-height: 150px;
+  max-width: 100%;
+}
+
+.TT {
+  animation-duration: 2s;
+  animation-name: aparecer;
+  animation-iteration-count: infinite;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
