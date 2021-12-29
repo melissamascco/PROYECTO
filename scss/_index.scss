@@ -71,7 +71,7 @@
 }
 
 .box5 {
-  @include caja(400px, 800px, rgba(247, 240, 240, 0));
+  @include caja(600px, 7000px, rgba(247, 240, 240, 0));
   box-shadow: 0 10px 50px - 10px rgba(0, 0, 0, 0.45);
   margin: 0.8rem;
   padding: 0.8rem;
@@ -107,10 +107,34 @@
   transform: scale(1.1, 1.1);
 }
 
+.card2 {
+  margin: 1rem;
+  max-width: 600px;
+
+  padding: 1rem;
+  box-shadow: 0 10px 50px - 10px rgba(0, 0, 0, 0.45);
+
+  &_text {
+    font-style: italic;
+    text-align: center;
+  }
+  &_title {
+    font-style: italic;
+    text-align: center;
+
+    color: black;
+    color: $color-contenido;
+    font-weight: bold;
+  }
+  &_1 {
+    background: white;
+  }
+}
+
 textarea {
   width: 70%;
-  min-height: 60px;
-  max-height: 150px;
+  min-height: 70px;
+  max-height: 158px;
   max-width: 100%;
 }
 
