@@ -1,0 +1,47 @@
+#AdThrive_Recipe_1_desktop, AdThrive_Recipe_1_tablet {
+float: right;
+margin: 0 0 10px 30px;
+}
+
+.adthrive-sidebar.adthrive-stuck {
+margin-top: 40px !important;
+}
+
+#AdThrive_Sidebar_9_desktop {
+margin-bottom: 20px !important;
+}
+
+.adthrive-device-phone .adthrive-content {
+margin: 0 auto !important;
+}
+
+body.home.adthrive-device-phone .adthrive-content {
+margin-bottom: 30px !important;
+}
+
+body.single .adthrive-comscore {
+margin-bottom: 0px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* Place “Advertisement” tag above ads */
+/*.adthrive-content:before {
+  content: "Advertisement";
+  font-family: 'Quattrocento', serif;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: block;
+  color: #888;
+} */
+/* END ADVERTISEMENT STYLING */
+
+/*.adthrive-content {
+background-color:#f1f1f1;
+} */
+
+.adthrive-content {
+margin-top: 25px;
+margin-bottom: 25px;
+}
