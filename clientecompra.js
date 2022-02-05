@@ -112,7 +112,7 @@ do {
     );
     respuesta = parseInt(
       prompt(
-        "Escoge del numeros de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
+        "Escoge del numeros de opcciones de la operacion q deas realisar luego escribe el numero y da click en aceptar  . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
       )
     );
   }
