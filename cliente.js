@@ -143,7 +143,7 @@ function comprar() {
     case "4":
       producto = "Pan";
       precio = 5;
-
+      break;
     case "5":
       producto = "Pollo";
       precio = 12;
