@@ -136,7 +136,7 @@ function comprar() {
 
       break;
     case "3":
-      producto = "Durasno";
+      producto = "Durazno";
       precio = 9;
 
       break;
