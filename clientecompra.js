@@ -100,7 +100,7 @@ do {
     alert("Producto ingresado con exito. :");
     respuesta = parseInt(
       prompt(
-        "Escoge del numeros de opcciones de la operacion q deas realisar luego escribe el numero y da click en aceptar .   \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
+        "Escoge el numero de opcion de la operacion que deas realizar luego escribe el numero y da click en aceptar .   \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
       )
     );
   } else if (respuesta == 2) {
@@ -112,7 +112,7 @@ do {
     );
     respuesta = parseInt(
       prompt(
-        "Escoge del numeros de opcciones de la operacion q deas realisar luego escribe el numero y da click en aceptar  . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
+        "Escoge el numeros de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
       )
     );
   }
