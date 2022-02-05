@@ -91,7 +91,7 @@ class Pedido {
 }
 respuesta = parseInt(
   prompt(
-    " ------------------------------BIO+MARKET---------------------------------\n\nEscoge el numero de opccion de la operacion que deas realisar luego escribe el numero y da click en aceptar . \n1.Comprar carrito\n2.Salir de Bio+ MARKET"
+    " ------------------------------BIO+MARKET---------------------------------\n\nEscoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar carrito\n2.Salir de Bio+ MARKET"
   )
 );
 do {
