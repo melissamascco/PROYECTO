@@ -54,7 +54,7 @@ class Producto {
 const productos = [];
 productos.push(new Producto("Papaya", "8", "40", "1"));
 productos.push(new Producto("Fresa", "10", "50", "2"));
-productos.push(new Producto("Durasno", "9", "30", "3"));
+productos.push(new Producto("Durazno", "9", "30", "3"));
 productos.push(new Producto("pan", "5", "25", "4"));
 productos.push(new Producto("pollo", "12", "15", "5"));
 productos.push(new Producto("Fideos", "10", "15", "6"));
@@ -120,7 +120,7 @@ do {
 
 function comprar() {
   let producto = prompt(
-    "¿que deseas comprar?\n   \n1.Papaya. \n2.Fresa. \n3.Durasno. \n4.Pan.   \n5.Pollo.   \n6.Fideoas.  \n7.Galletas. "
+    "¿que deseas comprar?\n   \n1.Papaya. \n2.Fresa. \n3.Durazno. \n4.Pan.   \n5.Pollo.   \n6.Fideoas.  \n7.Galletas. "
   );
   let cantidad = parseInt(prompt("¿Cuántos  platos deas pedir?", 0));
 
