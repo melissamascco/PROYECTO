@@ -122,7 +122,7 @@ function comprar() {
   let producto = prompt(
     "¿que deseas comprar?\n   \n1.Papaya. \n2.Fresa. \n3.Durazno. \n4.Pan.   \n5.Pollo.   \n6.Fideoas.  \n7.Galletas. "
   );
-  let cantidad = parseInt(prompt("¿Cuántos  platos deas pedir?", 0));
+  let cantidad = parseInt(prompt("¿Cuántos quieres comprar?", 0));
 
   switch (producto) {
     case "1":
