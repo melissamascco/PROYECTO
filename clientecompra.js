@@ -37,10 +37,10 @@ for (const cliente of ingresarcliente) {
 alert("tus datos se guardaron correctamente :D!!!!");
 //------------------------------------------PRODUCTOS DISPONIBLES A LA VENTA--------------------------------------------------//
 
-nombre = 0;
-costo = 0;
-stock = 0;
-categoria = 0;
+let nombre = 0;
+let costo = 0;
+let stock = 0;
+let categoria = 0;
 
 class Producto {
   constructor(nombre, costo, stock, categoria) {
