@@ -13,9 +13,9 @@ class DatosPersonales {
       (this.celular = celular);
   }
 }
-alert(
-  "------------------Bienvenidos a BIO+MARKET -------------------------\n\npara poder seguir registrate"
-);
+//alert(
+//  "------------------Bienvenidos a BIO+MARKET -------------------------\n\npara poder seguir registrate"
+//);
 const ingresarcliente = [];
 
 //let nombreClientep = prompt("ingresa nombre : ");
@@ -98,11 +98,11 @@ do {
   if (respuesta == 1) {
     comprar();
     alert("Producto ingresado con exito. :");
-    respuesta = parseInt(
-      prompt(
-        "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar .   \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
-      )
-    );
+    //respuesta = parseInt(
+    // prompt(
+    // "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar .   \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
+    // )
+    // );
   } else if (respuesta == 2) {
     repetir = false;
     alert("Ha seleccionado salir.");
@@ -110,11 +110,11 @@ do {
     alert(
       "Ingresaste una opción incorrecta. Por favor vuelva a intentarlo. :("
     );
-    respuesta = parseInt(
-      prompt(
-        "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
-      )
-    );
+    //respuesta = parseInt(
+    // prompt(
+    //    "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
+    // )
+    // );
   }
 } while (repetir);
 
@@ -122,7 +122,7 @@ function comprar() {
   let producto = prompt(
     "¿que deseas comprar?\n   \n1.Papaya. \n2.Fresa. \n3.Durazno. \n4.Pan.   \n5.Pollo.   \n6.Fideoas.  \n7.Galletas. "
   );
-  let cantidad = parseInt(prompt("¿Cuántos quieres comprar?", 0));
+  //let cantidad = parseInt(prompt("¿Cuántos quieres comprar?", 0));
 
   switch (producto) {
     case "1":
