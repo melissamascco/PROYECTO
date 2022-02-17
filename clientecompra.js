@@ -18,10 +18,10 @@ alert(
 );
 const ingresarcliente = [];
 
-let nombreClientep = prompt("ingresa nombre : ");
-let direccionp = prompt("ingresa direccion : ");
-let dnip = prompt("ingresa dni : ");
-let celularp = prompt("ingresar celular : ");
+//let nombreClientep = prompt("ingresa nombre : ");
+//let direccionp = prompt("ingresa direccion : ");
+//let dnip = prompt("ingresa dni : ");
+//let celularp = prompt("ingresar celular : ");
 
 ingresarcliente.push(
   new DatosPersonales(nombreClientep, direccionp, dnip, celularp)
