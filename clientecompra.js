@@ -170,7 +170,7 @@ function comprar() {
 }
 
 function recorrerArreglo(item, index) {
-  // mostarProductos += index + ": " + item + "<br>"; // object
+  mostarProductos += index + ": " + item + "<br>"; // object
   mostarProductos += index + ": " + JSON.stringify(item) + "<br>";
 }
 console.log(typeof `Arreglo productos: ${JSON.stringify(arregloProductos)}`); // string

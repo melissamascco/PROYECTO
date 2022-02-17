@@ -152,3 +152,19 @@ textarea {
     opacity: 1;
   }
 }
+.submenu {
+  position: relative;
+}
+.submenu #carrito {
+  display: none;
+}
+.submenu:hover #carrito {
+  display: block;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  background: #17181b;
+  padding: 20px;
+}
