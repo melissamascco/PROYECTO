@@ -1,211 +1,128 @@
-// -----------------------------------registro de cliente----------------------------------------------------//
+const carrito = document.getElementById("carrito");
+const platillos = document.getElementById("lista-platillos");
+const listaPlatillos = document.querySelector("#lista-carrito");
+const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
 
-let nombreCliente = 0;
-let direccion = 0;
-let dni = 0;
-let celular = 0;
+cargarEventListeners();
 
-class DatosPersonales {
-  constructor(nombreCliente, direccion, dni, celular) {
-    (this.nombreCliente = nombreCliente),
-      (this.direccion = direccion),
-      (this.dni = dni),
-      (this.celular = celular);
+function cargarEventListeners() {
+  platillos.addEventListener("click", comprarPlatillo);
+  carrito.addEventListener("click", eliminarPlatillo);
+  vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+  document.addEventListener("DOMContentLoaded", leerLocalStorage);
+}
+
+function comprarPlatillo(e) {
+  e.preventDefault();
+  if (e.target.classList.contains("agregar-carrito")) {
+    const platillo = e.target.parentElement.parentElement;
+    leerDatosPlatillo(platillo);
   }
 }
-//alert(
-//  "------------------Bienvenidos a BIO+MARKET -------------------------\n\npara poder seguir registrate"
-//);
-const ingresarcliente = [];
 
-//let nombreClientep = prompt("ingresa nombre : ");
-//let direccionp = prompt("ingresa direccion : ");
-//let dnip = prompt("ingresa dni : ");
-//let celularp = prompt("ingresar celular : ");
+function leerDatosPlatillo(platillo) {
+  const infoPlatillo = {
+    imagen: platillo.querySelector("img").src,
+    titulo: platillo.querySelector("h4").textContent,
+    precio: platillo.querySelector(".precio span").textContent,
+    id: platillo.querySelector("a").getAttribute("data-id"),
+  };
 
-ingresarcliente.push(
-  new DatosPersonales(nombreClientep, direccionp, dnip, celularp)
-);
-
-for (const cliente of ingresarcliente) {
-  console.log(ingresarcliente);
-  console.log(cliente.nombreCliente);
-  console.log(cliente.direccion);
-  console.log(cliente.dni);
-  console.log(cliente.celular);
+  insertarCarrito(infoPlatillo);
 }
-alert("tus datos se guardaron correctamente :D!!!!");
-//------------------------------------------PRODUCTOS DISPONIBLES A LA VENTA--------------------------------------------------//
 
-let nombre = 0;
-let costo = 0;
-let stock = 0;
-let categoria = 0;
+function insertarCarrito(platillo) {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+       <td>
+           <img src="${platillo.imagen}" width=100> 
+       </td> 
+       <td>${platillo.titulo}</td>
+       <td>${platillo.precio}</td>
+       <td>
+        <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+       </td>
+    `;
+  listaPlatillos.appendChild(row);
+  guardarPlatilloLocalStorage(platillo);
+}
 
-class Producto {
-  constructor(nombre, costo, stock, categoria) {
-    this.nombre = nombre.toUpperCase();
-    this.costo = parseFloat(costo);
-    this.stock = stock;
-    this.categoria = categoria;
+function eliminarPlatillo(e) {
+  e.preventDefault();
+
+  let platillo, platilloId;
+
+  if (e.target.classList.contains("borrar-platillo")) {
+    e.target.parentElement.parentElement.remove();
+    platillo = e.target.parentElement.parentElement;
+    platilloId = platillo.querySelector("a").getAttribute("data-id");
   }
+  eliminarPlatilloLocalStorage(platilloId);
 }
-// array de productos
-const productos = [];
-productos.push(new Producto("Papaya", "8", "40", "1"));
-productos.push(new Producto("Fresa", "10", "50", "2"));
-productos.push(new Producto("Durazno", "9", "30", "3"));
-productos.push(new Producto("pan", "5", "25", "4"));
-productos.push(new Producto("pollo", "12", "15", "5"));
-productos.push(new Producto("Fideos", "10", "15", "6"));
-productos.push(new Producto("galletas", "8", "15", "7"));
 
-const frutas = productos.filter((producto) => producto.categoria < 4);
-console.log(frutas);
-
-const variados = productos.filter((producto) => producto.categoria > 3);
-console.log(variados);
-
-alert(
-  "Hola :) en  BIO+ MARKET\n\n Tenemos los productos de categoria Fruta : \n\n" +
-    JSON.stringify(frutas) +
-    "\n\n tambien contamos con la categoria de productos Variado : \n\n" +
-    JSON.stringify(variados)
-);
-
-//--------------------------------- compra de productos-----------------------------------//
-
-let producto = 0;
-let precio = 0;
-let cantidad = 0;
-let repetir = true;
-let arregloProductos = [];
-let mostarProductos = "";
-
-class Pedido {
-  constructor(producto, precio, cantidad) {
-    (this.producto = producto),
-      (this.precio = precio),
-      (this.cantidad = cantidad);
+function vaciarCarrito() {
+  while (listaPlatillos.firstChild) {
+    listaPlatillos.removeChild(listaPlatillos.firstChild);
   }
+  vaciarLocalStorage();
+
+  return false;
 }
-respuesta = parseInt(
-  prompt(
-    " ------------------------------BIO+MARKET---------------------------------\n\nEscoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar carrito\n2.Salir de Bio+ MARKET"
-  )
-);
-do {
-  if (respuesta == 1) {
-    comprar();
-    alert("Producto ingresado con exito. :");
-    //respuesta = parseInt(
-    // prompt(
-    // "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar .   \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
-    // )
-    // );
-  } else if (respuesta == 2) {
-    repetir = false;
-    alert("Ha seleccionado salir.");
+
+function guardarPlatilloLocalStorage(platillo) {
+  let platillos;
+
+  platillos = obtenerPlatillosLocalStorage();
+  platillos.push(platillo);
+
+  localStorage.setItem("platillos", JSON.stringify(platillos));
+}
+
+function obtenerPlatillosLocalStorage() {
+  let platillosLS;
+
+  if (localStorage.getItem("platillos") === null) {
+    platillosLS = [];
   } else {
-    alert(
-      "Ingresaste una opción incorrecta. Por favor vuelva a intentarlo. :("
-    );
-    //respuesta = parseInt(
-    // prompt(
-    //    "Escoge el numero de opcion de la operacion que deseas realizar luego escribe el numero y da click en aceptar . \n1.Comprar Productos\n2.Salir de Bio+ MARKET"
-    // )
-    // );
+    platillosLS = JSON.parse(localStorage.getItem("platillos"));
   }
-} while (repetir);
-
-function comprar() {
-  let producto = prompt(
-    "¿que deseas comprar?\n   \n1.Papaya. \n2.Fresa. \n3.Durazno. \n4.Pan.   \n5.Pollo.   \n6.Fideoas.  \n7.Galletas. "
-  );
-  //let cantidad = parseInt(prompt("¿Cuántos quieres comprar?", 0));
-
-  switch (producto) {
-    case "1":
-      producto = "Papaya";
-      precio = 8;
-
-      break;
-    case "2":
-      producto = "Fresa";
-      precio = 10;
-
-      break;
-    case "3":
-      producto = "Durazno";
-      precio = 9;
-
-      break;
-    case "4":
-      producto = "Pan";
-      precio = 5;
-      break;
-    case "5":
-      producto = "Pollo";
-      precio = 12;
-
-      break;
-    case "6":
-      producto = "Fideos";
-      precio = 10;
-
-      break;
-    case "7":
-      producto = "Galletas";
-      precio = 8;
-
-      break;
-    default:
-      alert("Alguno de los datos ingresados es incorrecto");
-  }
-
-  nuevoProducto = new Pedido(producto, precio, cantidad);
-  arregloProductos.push(nuevoProducto);
-
-  console.log(nuevoProducto);
+  return platillosLS;
 }
 
-function recorrerArreglo(item, index) {
-  mostarProductos += index + ": " + item + "<br>"; // object
-  mostarProductos += index + ": " + JSON.stringify(item) + "<br>";
+function leerLocalStorage() {
+  let platillosLS;
+
+  platillosLS = obtenerPlatillosLocalStorage();
+
+  platillosLS.forEach(function (platillo) {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+            <td>
+                <img src="${platillo.imagen}" width=100>
+            </td>
+            <td>${platillo.titulo}</td>
+            <td>${platillo.precio}</td>
+            <td>
+                <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+            </td>
+        `;
+    listaPlatillos.appendChild(row);
+  });
 }
-console.log(typeof `Arreglo productos: ${JSON.stringify(arregloProductos)}`); // string
-console.log(typeof arregloProductos); // object
 
-arregloProductos.forEach(recorrerArreglo);
+function eliminarPlatilloLocalStorage(platillo) {
+  let platillosLS;
+  platillosLS = obtenerPlatillosLocalStorage();
 
-console.log(`Arreglo productos: ${JSON.stringify(arregloProductos)}`);
+  platillosLS.forEach(function (platilloLS, index) {
+    if (platilloLS.id === platillo) {
+      platillosLS.splice(index, 1);
+    }
+  });
 
-console.log(arregloProductos);
+  localStorage.setItem("platillos", JSON.stringify(platillosLS));
+}
 
-console.log(JSON.stringify(arregloProductos.length));
-
-const listaNombres = arregloProductos.map((producto) => producto.producto);
-console.log(listaNombres);
-
-const total = arregloProductos.reduce(
-  (acc, el) => acc + el.precio * el.cantidad,
-  0
-);
-console.log(total);
-
-alert(
-  "------------------------- Resumen de la compra -------------------------\n\n" +
-    " hola esta es tu compra y el delivery " +
-    " es gratis en todas las compras \n" +
-    " productos comprados son   :  " +
-    JSON.stringify(arregloProductos.length) +
-    "\n" +
-    " nombre de  productos comprados  :  " +
-    listaNombres +
-    "\n" +
-    " el total es de  :  " +
-    "s/." +
-    total +
-    "\n\n" +
-    "--------------------- Gracias por tu compras ----------------------------"
-);
+function vaciarLocalStorage() {
+  localStorage.clear();
+}
