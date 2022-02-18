@@ -14,7 +14,7 @@
 }
 
 .fondo {
-  background-image: url("../carpeta imag/FONDO33.jpg");
+  background-image: url("../imag/FONDO33.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -133,7 +133,7 @@
   margin: 1rem;
   max-width: 600px;
   padding: 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 .card2_text {
   font-style: italic;
@@ -186,6 +186,29 @@ textarea {
   z-index: 1;
   background: wheat;
   padding: 20px;
+}
+
+#contenedor-productos {
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+p {
+  line-height: 1.8;
+}
+.producto {
+  width: 230px;
+  height: 330px;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid #3f7414;
+  margin: 0.8rem;
+  padding: 0.8rem;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

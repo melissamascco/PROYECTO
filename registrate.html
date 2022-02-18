@@ -71,23 +71,33 @@
                 >
               </li>
             </ul>
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <li class="submenu">
+              <img src="imag/carrito-de-compras (5).png" alt="">CARRITO
+              <div id="carrito">
+                  <p class="vacio">carrito vacio</p>
+                  <table id="lista-carrito" class="">
+                      <thead>
+                          <tr>
+                              <th> Imagen </th>
+                              <th> Platillos </th>
+                              <th> Precio  </th>
+                              <th> Eliminar </th>
+
+                          </tr>
+                      </thead>
+                      <tbody>    
+                      </tbody>
+                  </table>
+                  <a href="#" id="vaciar-carrito"
+                  class="button ">vaciar carrito</a>
+              </div>
+          </li>
           </div>
         </div> 
       </nav>
     </header>
     <!----------------------------------main--------------------------------------------------------------------->
-    <main>
+     <main>
       <section  CLASS="FONDO">
         <div class="position-relative overflow-hidden   p-md- m-md- text-center ">
           <div class="col-md-5 p-lg-5 mx-auto my-5"> 
@@ -96,7 +106,7 @@
             </h1>
             <div class="padre" class="container">
               <div class=" box3">
-                <img src="FOTOS/agregar-usuario.png" alt="" class="card_image" />
+                <img src="imag/agregar-usuario.png" alt="" class="card_image" />
                 <h6 class="text center  ">Registrate </h6> 
               </div> 
             </div>
@@ -108,142 +118,76 @@
           <h3 CLASS="TT" >  BIO+MARKET  TU MEJOR OPCION </h3>
         </div>
       </section>
-      <section>
-        <div CLASS="container text-center titulo">
-          <h1 >-----REGISTRATE ------</h1>
+        
+     <section>
+      <div class="padre contenedor text-center">  
+        <div class="card2"> 
+             <legend >--------DATOS PERSONALES-------</legend>
+          <form id="datospersonales">
+            <label for="Nombre" class="P-4"  id ="Nombre">Nombre:</label>
+            <input type="text"  placeholder="escriba aqui su nombre"  >
+            <br />
+            <label for="Apellido"  class="P-4">Apellido:</label>
+            <input type="text" placeholder="escriba aqui su apellido"  >
+            <br />
+            <label for="Direccion"  id="Direccion" class="P-3">Direccion:</label>
+            <input type="text" placeholder="escriba aqui su direccion"  >
+            <br />
+            <label for="DNI"  id="DNI" class="P-4">Dni:</label>
+            <input type="number" placeholder="escriba aqui su dni"  >
+            <br />
+            <label for="DNI"  id="DNI" class="P-4">Dni:</label>
+            <input type="number" placeholder="escriba aqui su dni"  >
+            <br />
+            <label for="DNI"  id="DNI" class="P-4">Dni:</label>
+            <input type="number" placeholder="escriba aqui su dni"  >
+            <br />
+            <label for="DNI"  id="DNI" class="P-4">Dni:</label>
+            <input type="number" placeholder="escriba aqui su dni"  >
+            <br />
+            
+
+
+            <div class="P-2">
+            <input type="submit" value="Enviar"  >
+            <input type="reset" value="limpiar formulario" />
+            </div>
+          </form>
         </div>
-      </section>
-      <section>
-        <div class="padre contenedor text-center ">
-          <div class=" card2"> 
-            <form action="">
-              <fieldset >
-                <div class="P-1">
-                  <legend >DATOS PERSONALES</legend>
-                  <label for="Nombre">NOMBRES:</label>
-                  <input 
-                  type= "texto"
-                  name="Nombre"
-                  id="Nombre"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                 <br />
-                <div class="P-1">
-                  <label for="Apellido">APELLIDO:</label>
-                  <input 
-                  type="text" 
-                  name="Apellido" 
-                  id="Apellido"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="P-1">
-                  <label for="Direccion">DIRECCCION:</label>
-                  <input 
-                  type="text"
-                  name="Direccion" 
-                  id="Direccion"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="P-1">
-                  <label for="DNI">DNI:</label>
-                  <input 
-                  type="text"
-                  name="DNI" 
-                  id="DNI"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="P-1">
-                  <label for="edad">EDAD:</label>
-                  <input 
-                  type="text"
-                  name="edad" 
-                  id="edad"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="">
-                  <label for="Cel">CEL:</label>
-                  <input 
-                  type="text"
-                  name="Cel" 
-                  id="Cel"
-                  placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="P-2">
-                  <h5>SEXSO</h5>
-                  <div>hombre</div>
-                  <input type="radio" name="sexo" value="hombe"/>
-                  <div>mujer</div>
-                  <input type="radio" name="sexo" value="mujer"/> 
-                </div>
-                <br />
-                <div class="P-2">
-                  <input type="submit" value="enviar" />
-                  <input type="reset" value="limpiar formulario" />
-                  <br />
-                </div>   
-              </fieldset>
-            </form>              
-          </div>       
-          <div class=" card2">
-            <form action="">
-              <fieldset> 
-                <div class="P-1">
-                  <legend >DATOS ADICIONALES</legend>
-                  <label for="edad">CORREO:</label>
-                  <input 
-                    type="text"
-                    name="edad" 
-                    id="edad"
-                    placeholder="escriba aqui su nombre"
-                  />
-                </div>
-                <br />
-                <div class="P-1">
-                 <h5>FRECUENCIA DE COMPRA </h5>
-                 <select name="promociones" id="promociones">
-                    <option valuo="siempre">simpre</option>
-                    <option valuo="una a la semana"> una vez ala semana</option>
-                    <option valuo="cada 15 dias">cada 15 dias</option>>
-                    <option valuo=" una vez al mes ">una vez al mes</option>>
-                 </select>
-                </div>
-                <br/>       
-                <div class="">
-                  <h5 CLASS="">DEJA TU COMENTARIO </h5>
-                  <label for="mensaje"></label>
-                  <div class="">
-                  <textarea name="mensaje" id="mensaje"clos="10" rows="20"></textarea>
-                </div>
-                <br />
-                <div class="P-1">
-                  <h5>TIPO DE PRODUCTOS QUE COMPRAS</h5>
-                  <div>tradicional</div>
-                  <input type="radio" name="PEFERENCIA DE COMPRA" value="tienda fisica"/>
-                  <div>organicos</div>
-                  <input type="radio" name="PEFERENCIA DE COMPRA" value="Tienda virtual"/>
-                </div>
-                 <br />
-                <div class="">
-                  <input type="submit" value="enviar" />
-                  <input type="reset" value="limpiar formulario" />
-                </div>
-                <br /> 
-              </fieldset>
-            </form> 
-          </div>  
-        </div>      
-     </section>  
+        <div class="card2"> 
+         
+       <form id="datospersonales">
+
+        <img src="imag/reg2.jpg" alt="" class="card_image" />
+         
+       </form>
+     </div>
+
+
+
+
+      </div>  
+     </section>
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
     <!--------------------------------------footer----------------------------------------------------------------------->
     <footer class="footer">
@@ -254,11 +198,11 @@
               <h5>CONTACTANOS</h5>
             </div>
             <div class="col-md-12 intros">
-              <img src="carpeta imag/M9.jpg" alt="Faccebok" />
-              <img src="carpeta imag/M10.jpg" alt="Instagram" />
-              <img src="carpeta imag/logoipsum-logo-25 (1).svg" alt="Logo" />
-              <img src="carpeta imag/M11.jpg" alt="Whatsapp" />
-              <img src="carpeta imag/M12.jpg" alt="Tiwitter" />
+              <img src="imag/M9.jpg" alt="Faccebok" />
+              <img src="imag/M10.jpg" alt="Instagram" />
+              <img src="imag/logoipsum-logo-25 (1).svg" alt="Logo" />
+              <img src="imag/M11.jpg" alt="Whatsapp" />
+              <img src="imag/M12.jpg" alt="Tiwitter" />
             </div>
           </div>
         </div>
@@ -269,5 +213,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="registrate2.js"></script>
   </body>
 </html>
