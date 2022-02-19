@@ -1,4 +1,4 @@
-//---------------------------------------- DESAFIO INTERACTUAR CON HTML ----------------------------------//
+//----------------------------------------  INTERACTUAR CON HTML , CREACION DE ELENTO PRODUCTO----------------------------------//
 
 let titulo = document.getElementById("titulo1");
 
@@ -33,5 +33,3 @@ function mostrarProducto(array) {
     }
   });
 }
-
-//---------------------------------------- DESAFIO INCORPORAR EVENTOS ----------------------------------//

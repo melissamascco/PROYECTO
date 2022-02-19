@@ -184,7 +184,7 @@ textarea {
   right: 0;
   top: 100%;
   z-index: 1;
-  background: wheat;
+  background: rgb(239, 240, 206);
   padding: 20px;
 }
 
@@ -211,4 +211,31 @@ p {
   background-color: white;
 }
 
+.vacio {
+  padding: 5px;
+  background-color: #30a035;
+  text-align: center;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #30a035;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+a {
+  display: block;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */
