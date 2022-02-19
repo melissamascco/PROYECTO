@@ -61,5 +61,5 @@ function verificar(e) {
     localStorage.setItem(clave, valor);
   };
 
-  guardarLocal("listaProductos", JSON.stringify(ingresarcliente));
+  guardarLocal("listaclientes", JSON.stringify(ingresarcliente));
 }

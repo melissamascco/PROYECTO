@@ -28,6 +28,7 @@ function leerDatosProducto(Producto) {
     titulo: Producto.querySelector("h4").textContent,
     precio: Producto.querySelector(".precio span").textContent,
     id: Producto.querySelector("a").getAttribute("data-id"),
+    cantidad: Producto.querySelector("a").getAttribute("cantidad"),
   };
 
   insertarCarrito(infoProducto);
@@ -122,7 +123,7 @@ function eliminarProductoLocalStorage(Producto) {
     }
   });
 
-  localStorage.setItem("platillos", JSON.stringify(ProductosLS));
+  localStorage.setItem("Productos", JSON.stringify(ProductosLS));
 }
 
 function vaciarLocalStorage() {
