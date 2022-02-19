@@ -82,22 +82,22 @@ function guardarProductoLocalStorage(Producto) {
 }
 
 function obtenerProductosLocalStorage() {
-  let ProductosLS;
+  let Productosb;
 
   if (localStorage.getItem("Productos") === null) {
-    ProductosLS = [];
+    Productosb = [];
   } else {
-    ProductosLS = JSON.parse(localStorage.getItem("Productos"));
+    Productosb = JSON.parse(localStorage.getItem("Productos"));
   }
-  return ProductosLS;
+  return Productosb;
 }
 
 function leerLocalStorage() {
-  let ProductosLS;
+  let Productosb;
 
-  ProductosLS = obtenerProductosLocalStorage();
+  Productosb = obtenerProductosLocalStorage();
 
-  ProductosLS.forEach(function (Producto) {
+  Productosb.forEach(function (Producto) {
     const row = document.createElement("tr");
     row.innerHTML = `
             <td>
@@ -114,16 +114,16 @@ function leerLocalStorage() {
 }
 
 function eliminarProductoLocalStorage(Producto) {
-  let ProductosLS;
-  ProductosLS = obtenerProductosLocalStorage();
+  let Productosb;
+  Productosb = obtenerProductosLocalStorage();
 
-  ProductosLS.forEach(function (ProductoLS, index) {
-    if (ProductoLS.id === Producto) {
-      ProductosLS.splice(index, 1);
+  Productosb.forEach(function (Productob, index) {
+    if (Productob.id === Producto) {
+      Productosb.splice(index, 1);
     }
   });
 
-  localStorage.setItem("Productos", JSON.stringify(ProductosLS));
+  localStorage.setItem("Productos", JSON.stringify(Productosb));
 }
 
 function vaciarLocalStorage() {
