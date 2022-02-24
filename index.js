@@ -1,5 +1,20 @@
 //------------------------------------------INCORPORANDO LIBRERÍAS-------------------------------------------//
 
+Swal.fire({
+  title: "Bienvenido a BIO+MARK!",
+  text: "el mejor lugar para hacer tus compras saludables ingresa el  distro donde vives.",
+
+  input: "select",
+  inputPlaceholder: "Distrito",
+  inputValue: "",
+  inputOptions: {
+    surco: "Surco",
+    Barranco: "Barranco",
+    Chorrilos: "Chorrilos",
+    Ate: "Ate",
+    Lurin: "Lurin",
+  },
+});
 //----------------------------------------------------------------------------------------------------------------//
 let titulo = document.getElementById("titulo1");
 
