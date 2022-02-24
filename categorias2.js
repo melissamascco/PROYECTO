@@ -1,8 +1,8 @@
 //-----------------------------INCORPORANDO LIBRERÍAS-----------------------------//
 
-Swal.fire({
-  title: " Estas en Categorias de Productos ",
-});
+//Swal.fire({
+// title: " Estas en Categorias de Productos ",
+//});
 
 //-------------------------------------------------------------------------------//
 const carrito = document.getElementById("carrito");
