@@ -1,5 +1,21 @@
-//----------------------------------------  INTERACTUAR CON HTML , CREACION DE ELENTO PRODUCTO----------------------------------//
+//------------------------------------------INCORPORANDO LIBRERÍAS-------------------------------------------//
 
+Swal.fire({
+  title: "Bienvenido a BIO+MARK!",
+  text: "el mejor lugar para hacer tus compras saludables ingresa el  distro donde vives.",
+
+  input: "select",
+  inputPlaceholder: "Distrito",
+  inputValue: "",
+  inputOptions: {
+    surco: "Surco",
+    Barranco: "Barranco",
+    Chorrilos: "Chorrilos",
+    Ate: "Ate",
+    Lurin: "Lurin",
+  },
+});
+//----------------------------------------------------------------------------------------------------------------//
 let titulo = document.getElementById("titulo1");
 
 titulo.innerText = "----- TE OFRECEMOS SIEMPRE LO MEJOR ------";
@@ -15,13 +31,15 @@ mostrarProducto(dataProducto);
 function mostrarProducto(array) {
   array.forEach((producto) => {
     let div = document.createElement("div");
+
+    let { img, nombre, precio, id } = producto; //------------DESESTRUCTURACIÓN- OPTIMIZANDO EL PROYECTO------------//
     div.className = "producto";
     div.innerHTML = `
-    <img src=${producto.img}>
+    <img src=${img}>
     
-    <h4><class="card-title">${producto.nombre}</h4> 
-    <h6 class="text center  ">$${producto.precio} x KG </h6>
-    <button id="btcomprar${producto.id}"> </button> 
+    <h4><class="card-title">${nombre}</h4> 
+    <h6 class="text center  ">$${precio} x KG </h6>
+    <button id="btcomprar${id}"> </button> 
     <a href="categorias.html" >CATEGORIA</div>`;
 
     contendorproducto.appendChild(div);

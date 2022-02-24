@@ -4,7 +4,7 @@ let apellido = 0;
 let direccion = 0;
 let dni = 0;
 let cel = 0;
-let dexo = 0;
+let sexo = 0;
 let edad = 0;
 
 class DatosPersonales {
@@ -15,12 +15,13 @@ class DatosPersonales {
       (this.dni = dni);
     this.cel = cel;
     this.sexo = sexo;
-    this.sexo = edad;
+    this.edad = edad;
   }
 }
 const ingresarcliente = [];
 
 const btnEmpezar = document.getElementById("btnEmpezar");
+
 cargarEventos();
 function cargarEventos() {
   btnEmpezar.addEventListener("click", verificar);
@@ -51,10 +52,13 @@ function verificar(e) {
 
   for (const cliente of ingresarcliente) {
     console.log(ingresarcliente);
-    console.log(cliente.nombre);
-    console.log(cliente.apellido);
-    console.log(cliente.direccion);
-    console.log(cliente.dni);
+    console.log(cliente?.nombre || "nombre no ingresado"); //--------------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.apellido || "apellido no ingresado"); //----------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.direccion || "direccion no ingresado"); //--------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.dni || "dni no ingresado"); //--------------------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.cel || "cel no ingresado"); //---------------------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.sexo || "sexo no ingresado"); //------------------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
+    console.log(cliente?.edad || "edad no ingresado"); //------------------OPTIMIZANDO EL PROYECTO-OPERADOR LÓGICO OR----------------//
   }
 
   const guardarLocal = (clave, valor) => {
@@ -63,3 +67,15 @@ function verificar(e) {
 
   guardarLocal("listaclientes", JSON.stringify(ingresarcliente));
 }
+
+const btn = document.getElementById("btnEmpezar"); //-----------------------------INCORPORANDO LIBRERÍAS-----------------------------//
+
+btn.addEventListener("click", () => {
+  swal({
+    title: "Genial!",
+    text: " Sus datos fueron guardados correctamente!",
+    icon: "success",
+
+    confirm: "ok",
+  });
+});

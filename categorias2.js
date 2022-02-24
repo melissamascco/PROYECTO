@@ -1,5 +1,10 @@
-//------------------------------ CARRITO DE COMPRA--------------------------------------------//
+//-----------------------------INCORPORANDO LIBRERÍAS-----------------------------//
 
+Swal.fire({
+  title: " Estas en Categorias de Productos ",
+});
+
+//-------------------------------------------------------------------------------//
 const carrito = document.getElementById("carrito");
 const Productos = document.getElementById("lista-productos");
 const listaProductos = document.querySelector("#lista-carrito");
@@ -35,14 +40,17 @@ function leerDatosProducto(Producto) {
 
 function insertarCarrito(Producto) {
   const row = document.createElement("tr");
+
+  let { imagen, titulo, precio, id } = Producto; //--------------------------DESESTRUCTURACIÓN-OPTIMIZANDO EL PROYECTO------------//
+
   row.innerHTML = `
        <td>
-           <img src="${Producto.imagen}" width=100> 
+           <img src="${imagen}" width=100> 
        </td> 
-       <td>${Producto.titulo}</td>
-       <td>${Producto.precio}</td>
+       <td>${titulo}</td>
+       <td>${precio}</td>
        <td>
-        <a href="#" class="borrar-Producto" data-id="${Producto.id}">X</a>
+        <a href="#" class="borrar-Producto" data-id="${id}">X</a>
        </td>
     `;
   listaProductos.appendChild(row);
@@ -98,14 +106,16 @@ function leerLocalStorage() {
 
   Productosb.forEach(function (Producto) {
     const row = document.createElement("tr");
+    let { imagen, titulo, precio, id } = Producto; //---------------DESESTRUCTURACIÓN-OPTIMIZANDO EL PROYECTO-------------------//
+
     row.innerHTML = `
             <td>
-                <img src="${Producto.imagen}" width=100>
+                <img src="${imagen}" width=100>
             </td>
-            <td>${Producto.titulo}</td>
-            <td>${Producto.precio}</td>
+            <td>${titulo}</td>
+            <td>${precio}</td>
             <td>
-                <a href="#" class="borrar-Producto" data-id="${Producto.id}">X</a>
+                <a href="#" class="borrar-Producto" data-id="${id}">X</a>
             </td>
         `;
     listaProductos.appendChild(row);
@@ -117,9 +127,7 @@ function eliminarProductoLocalStorage(Producto) {
   Productosb = obtenerProductosLocalStorage();
 
   Productosb.forEach(function (Productob, index) {
-    if (Productob.id === Producto) {
-      Productosb.splice(index, 1);
-    }
+    Productob.id === Producto && Productosb.splice(index, 1); // -----PERADOR LÓGICO AND-OPTIMIZANDO EL PROYECTO-------------------//
   });
 
   localStorage.setItem("Productos", JSON.stringify(Productosb));
