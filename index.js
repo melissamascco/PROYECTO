@@ -26,7 +26,7 @@ contendor.innerHTML = "<h1>ven y disfruta </h1>";
 
 const lista = document.querySelector("#contenedor-productos");
 
-fetch("/data.json") //--------------------------------------- SE UTILIZO ETCH ---------------------------------------------------//
+fetch("/data.json") //--------------------------------------- SE UTILIZO FETCH ---------------------------------------------------//
   .then((res) => res.json())
   .then((data) => {
     data.forEach((producto) => {
